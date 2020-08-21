@@ -1,0 +1,27 @@
+entity Region {
+	name String required
+    description String
+    code String required
+}
+
+entity Area {
+	name String required
+    description String
+    code String required
+}
+
+entity Customer {
+    file Blob required
+}
+
+relationship OneToOne {
+    Customer{area(name) required} to Area
+}
+
+relationship OneToMany {
+	Region to Area{region(name) required}
+}
+
+dto all with mapstruct
+service all with serviceImpl
+paginate all with pagination	
