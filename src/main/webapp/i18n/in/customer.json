@@ -1,0 +1,23 @@
+{
+  "jalurpipaApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "createLabel": "Buat Customer baru",
+        "createOrEditLabel": "Buat atau edit Customer",
+        "notFound": "No Customers found"
+      },
+      "created": "Customer dengan id {{ param }} telah dibuat",
+      "updated": "Customer dengan id {{ param }} telah diperbaharui",
+      "deleted": "Customer dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "file": "File",
+      "area": "Area"
+    }
+  }
+}
