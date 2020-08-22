@@ -2,6 +2,134 @@
   "name": "Customer",
   "fields": [
     {
+      "fieldName": "objectId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "yCoordinate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "xCoordinate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "refId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pipeName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "yearInstalled",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "owner",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "stationType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lineStream",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "customerType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "equipment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "manuMeter",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "manuFilter",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "manuEngine",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codeStand",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fluida",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "flowRate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pressureIn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pressureOut",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "temperature",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "basePressure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "baseTemperature",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inspection",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "expired",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "coiNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coiDoc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coiReport",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reEngRla",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "file",
       "fieldType": "byte[]",
       "fieldTypeBlobContent": "any",

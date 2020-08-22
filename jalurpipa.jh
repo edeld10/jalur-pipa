@@ -11,6 +11,38 @@ entity Area {
 }
 
 entity Customer {
+    objectId Long
+    yCoordinate Double
+    xCoordinate Double
+    refId String
+    tagId String
+    name String
+    pipeName String
+    yearInstalled Integer
+    owner String
+    stationType String
+    lineStream Integer
+    customerType String
+    identification String
+    equipment String
+    type String
+    manuMeter String
+    manuFilter String
+    manuEngine String
+    codeStand String
+    fluida String
+    flowRate String
+    pressureIn String
+    pressureOut String
+    temperature String
+    basePressure String
+    baseTemperature String
+    inspection LocalDate
+    expired LocalDate
+    coiNumber String
+    coiDoc String
+    coiReport String
+    reEngRla String
     file Blob required
 }
 

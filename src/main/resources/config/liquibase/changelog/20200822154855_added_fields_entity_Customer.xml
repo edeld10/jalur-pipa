@@ -1,0 +1,165 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="doddyph" id="20200822154855">
+        <addColumn tableName="customer">
+            <column name="object_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="y_coordinate" type="double">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="x_coordinate" type="double">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="ref_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="tag_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="pipe_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="year_installed" type="integer">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="owner" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="station_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="line_stream" type="integer">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="customer_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="identification" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="equipment" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="manu_meter" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="manu_filter" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="manu_engine" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="code_stand" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="fluida" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="flow_rate" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="pressure_in" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="pressure_out" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="temperature" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="base_pressure" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="base_temperature" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="inspection" type="date">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="expired" type="date">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="coi_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="coi_doc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="coi_report" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+        <addColumn tableName="customer">
+            <column name="re_eng_rla" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>
