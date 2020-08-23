@@ -79,6 +79,10 @@
         <lifecycle-mapping.version>1.0.0</lifecycle-mapping.version>
         <properties-maven-plugin.version>1.0.0</properties-maven-plugin.version>
         <sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
+        <apache.poi.version>4.1.2</apache.poi.version>
+        <apache.poi-ooxml.version>4.1.2</apache.poi-ooxml.version>
+        <lombok.version>1.18.12</lombok.version>
+        <joda-time.version>2.10.6</joda-time.version>
         <jacoco.utReportFolder>${project.build.directory}/jacoco/test</jacoco.utReportFolder>
         <jacoco.utReportFile>${jacoco.utReportFolder}/test.exec</jacoco.utReportFile>
         <jacoco.itReportFolder>${project.build.directory}/jacoco/integrationTest</jacoco.itReportFolder>
@@ -319,6 +323,28 @@
             <scope>test</scope>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${apache.poi.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${apache.poi-ooxml.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
