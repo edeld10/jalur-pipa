@@ -138,13 +138,12 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-one",
+      "relationshipType": "many-to-one",
       "otherEntityName": "area",
       "otherEntityRelationshipName": "customer",
       "relationshipValidateRules": "required",
       "relationshipName": "area",
-      "otherEntityField": "name",
-      "ownerSide": true
+      "otherEntityField": "name"
     }
   ],
   "changelogDate": "20200821222535",

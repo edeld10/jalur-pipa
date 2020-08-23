@@ -46,12 +46,9 @@ entity Customer {
     file Blob required
 }
 
-relationship OneToOne {
-    Customer{area(name) required} to Area
-}
-
 relationship OneToMany {
 	Region to Area{region(name) required}
+	Area to Customer{area(name) required}
 }
 
 dto all with mapstruct

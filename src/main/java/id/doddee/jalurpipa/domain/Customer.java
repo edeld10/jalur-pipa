@@ -1,5 +1,6 @@
 package id.doddee.jalurpipa.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.*;
@@ -124,9 +125,9 @@ public class Customer implements Serializable {
     @Column(name = "file_content_type", nullable = false)
     private String fileContentType;
 
-    @OneToOne(optional = false)
+    @ManyToOne(optional = false)
     @NotNull
-    @JoinColumn(unique = true)
+    @JsonIgnoreProperties(value = "customers", allowSetters = true)
     private Area area;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

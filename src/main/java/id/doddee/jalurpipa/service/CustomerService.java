@@ -1,16 +1,15 @@
 package id.doddee.jalurpipa.service;
 
 import id.doddee.jalurpipa.service.dto.CustomerDTO;
-
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
-import java.util.Optional;
 
 /**
  * Service Interface for managing {@link id.doddee.jalurpipa.domain.Customer}.
  */
 public interface CustomerService {
+    boolean save(byte[] file, Long areaId, String areaName);
 
     /**
      * Save a customer.
@@ -27,7 +26,6 @@ public interface CustomerService {
      * @return the list of entities.
      */
     Page<CustomerDTO> findAll(Pageable pageable);
-
 
     /**
      * Get the "id" customer.

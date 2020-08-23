@@ -1,13 +1,13 @@
 package id.doddee.jalurpipa.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.*;
-
-import java.io.Serializable;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
  * A Area.
@@ -16,7 +16,6 @@ import java.io.Serializable;
 @Table(name = "area")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Area implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -34,6 +33,10 @@ public class Area implements Serializable {
     @NotNull
     @Column(name = "code", nullable = false)
     private String code;
+
+    @OneToMany(mappedBy = "area")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    private Set<Customer> customers = new HashSet<>();
 
     @ManyToOne(optional = false)
     @NotNull
@@ -88,6 +91,31 @@ public class Area implements Serializable {
         this.code = code;
     }
 
+    public Set<Customer> getCustomers() {
+        return customers;
+    }
+
+    public Area customers(Set<Customer> customers) {
+        this.customers = customers;
+        return this;
+    }
+
+    public Area addCustomer(Customer customer) {
+        this.customers.add(customer);
+        customer.setArea(this);
+        return this;
+    }
+
+    public Area removeCustomer(Customer customer) {
+        this.customers.remove(customer);
+        customer.setArea(null);
+        return this;
+    }
+
+    public void setCustomers(Set<Customer> customers) {
+        this.customers = customers;
+    }
+
     public Region getRegion() {
         return region;
     }
@@ -100,6 +128,7 @@ public class Area implements Serializable {
     public void setRegion(Region region) {
         this.region = region;
     }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override

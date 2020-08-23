@@ -19,6 +19,7 @@
       "name": "Name",
       "description": "Description",
       "code": "Code",
+      "customer": "Customer",
       "region": "Region"
     }
   }

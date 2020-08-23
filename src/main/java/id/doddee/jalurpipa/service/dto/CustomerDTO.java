@@ -3,7 +3,6 @@ package id.doddee.jalurpipa.service.dto;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.Lob;
-import javax.validation.constraints.*;
 
 /**
  * A DTO for the {@link id.doddee.jalurpipa.domain.Customer} entity.

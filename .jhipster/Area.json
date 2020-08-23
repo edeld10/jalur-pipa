@@ -18,6 +18,12 @@
   ],
   "relationships": [
     {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "area",
+      "relationshipName": "customer"
+    },
+    {
       "relationshipType": "many-to-one",
       "otherEntityName": "region",
       "otherEntityRelationshipName": "area",
