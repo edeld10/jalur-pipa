@@ -23,6 +23,7 @@
     <include file="config/liquibase/changelog/20200822154855_added_fields_entity_Customer.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200823141701_drop_not_null_constraint_entity_Customer.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200823180312_drop_unique_constraint_entity_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200826090552_add_unique_constraint_entity_Customer.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

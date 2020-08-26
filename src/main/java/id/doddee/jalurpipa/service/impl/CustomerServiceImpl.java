@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public boolean save(byte[] file, Long areaId, String areaName) {
+    public boolean upsert(byte[] file, Long areaId, String areaName) {
         try {
             List<Customer> customers = new CustomerExcelImporter(file)
                 .importToList()
@@ -50,10 +50,9 @@ public class CustomerServiceImpl implements CustomerService {
                     }
                 )
                 .collect(Collectors.toList());
-            customerRepository.saveAll(customers);
-            return true;
+            return customerRepository.bulkUpsert(customers);
         } catch (IOException e) {
-            log.error("Error save customers by excel file -> ", e);
+            log.error("Error upsert customers by excel file -> ", e);
             return false;
         }
     }

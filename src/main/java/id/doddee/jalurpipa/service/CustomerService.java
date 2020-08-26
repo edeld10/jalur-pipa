@@ -9,7 +9,7 @@ import org.springframework.data.domain.Pageable;
  * Service Interface for managing {@link id.doddee.jalurpipa.domain.Customer}.
  */
 public interface CustomerService {
-    boolean save(byte[] file, Long areaId, String areaName);
+    boolean upsert(byte[] file, Long areaId, String areaName);
 
     /**
      * Save a customer.

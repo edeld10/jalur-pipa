@@ -60,7 +60,7 @@ public class CustomerResource {
         if (customerDTO.getId() != null) {
             throw new BadRequestAlertException("A new customer cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        boolean result = customerService.save(customerDTO.getFile(), customerDTO.getAreaId(), customerDTO.getAreaName());
+        boolean result = customerService.upsert(customerDTO.getFile(), customerDTO.getAreaId(), customerDTO.getAreaName());
         return ResponseEntity.ok().headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, "")).body(result);
     }
 
