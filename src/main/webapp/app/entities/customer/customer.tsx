@@ -189,9 +189,9 @@ export const Customer = (props: ICustomerProps) => {
                 <th className="hand" onClick={sort('reEngRla')}>
                   <Translate contentKey="jalurpipaApp.customer.reEngRla">Re Eng Rla</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
-                <th className="hand" onClick={sort('file')}>
-                  <Translate contentKey="jalurpipaApp.customer.file">File</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
+                {/*<th className="hand" onClick={sort('file')}>*/}
+                  {/*<Translate contentKey="jalurpipaApp.customer.file">File</Translate> <FontAwesomeIcon icon="sort" />*/}
+                {/*</th>*/}
                 <th>
                   <Translate contentKey="jalurpipaApp.customer.area">Area</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -240,21 +240,21 @@ export const Customer = (props: ICustomerProps) => {
                   <td>{customer.coiDoc}</td>
                   <td>{customer.coiReport}</td>
                   <td>{customer.reEngRla}</td>
-                  <td>
-                    {customer.file ? (
-                      <div>
-                        {customer.fileContentType ? (
-                          <a onClick={openFile(customer.fileContentType, customer.file)}>
-                            <Translate contentKey="entity.action.open">Open</Translate>
-                            &nbsp;
-                          </a>
-                        ) : null}
-                        <span>
-                          {customer.fileContentType}, {byteSize(customer.file)}
-                        </span>
-                      </div>
-                    ) : null}
-                  </td>
+                  {/*<td>*/}
+                    {/*{customer.file ? (*/}
+                      {/*<div>*/}
+                        {/*{customer.fileContentType ? (*/}
+                          {/*<a onClick={openFile(customer.fileContentType, customer.file)}>*/}
+                            {/*<Translate contentKey="entity.action.open">Open</Translate>*/}
+                            {/*&nbsp;*/}
+                          {/*</a>*/}
+                        {/*) : null}*/}
+                        {/*<span>*/}
+                          {/*{customer.fileContentType}, {byteSize(customer.file)}*/}
+                        {/*</span>*/}
+                      {/*</div>*/}
+                    {/*) : null}*/}
+                  {/*</td>*/}
                   <td>{customer.areaName ? <Link to={`area/${customer.areaId}`}>{customer.areaName}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">

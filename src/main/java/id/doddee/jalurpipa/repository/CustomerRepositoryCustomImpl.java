@@ -1,5 +1,7 @@
 package id.doddee.jalurpipa.repository;
 
+import static id.doddee.jalurpipa.utils.CommonHelper.localDateToSqlDate;
+
 import id.doddee.jalurpipa.domain.Customer;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -74,8 +76,8 @@ public class CustomerRepositoryCustomImpl implements CustomerRepositoryCustom {
                     preparedStatement.setString(25, customer.getTemperature());
                     preparedStatement.setString(26, customer.getBasePressure());
                     preparedStatement.setString(27, customer.getBaseTemperature());
-                    preparedStatement.setDate(28, java.sql.Date.valueOf(customer.getInspection()));
-                    preparedStatement.setDate(29, java.sql.Date.valueOf(customer.getExpired()));
+                    preparedStatement.setDate(28, localDateToSqlDate(customer.getInspection()));
+                    preparedStatement.setDate(29, localDateToSqlDate(customer.getExpired()));
                     preparedStatement.setString(30, customer.getCoiNumber());
                     preparedStatement.setString(31, customer.getCoiDoc());
                     preparedStatement.setString(32, customer.getCoiReport());
@@ -107,8 +109,8 @@ public class CustomerRepositoryCustomImpl implements CustomerRepositoryCustom {
                     preparedStatement.setString(57, customer.getTemperature());
                     preparedStatement.setString(58, customer.getBasePressure());
                     preparedStatement.setString(59, customer.getBaseTemperature());
-                    preparedStatement.setDate(60, java.sql.Date.valueOf(customer.getInspection()));
-                    preparedStatement.setDate(61, java.sql.Date.valueOf(customer.getExpired()));
+                    preparedStatement.setDate(60, localDateToSqlDate(customer.getInspection()));
+                    preparedStatement.setDate(61, localDateToSqlDate(customer.getExpired()));
                     preparedStatement.setString(62, customer.getCoiNumber());
                     preparedStatement.setString(63, customer.getCoiDoc());
                     preparedStatement.setString(64, customer.getCoiReport());
