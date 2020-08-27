@@ -3,8 +3,11 @@ package id.doddee.jalurpipa.utils;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -19,11 +22,15 @@ public abstract class ExcelImporter<T> {
     abstract T buildData(Row row);
 
     protected String getCellValue(int cellIdx, Row row) {
-        return row.getCell(cellIdx).getStringCellValue();
+        return Optional.ofNullable(row.getCell(cellIdx)).map(Cell::getStringCellValue).orElse(null);
     }
 
-    protected double getNumericValue(int cellIdx, Row row) {
-        return row.getCell(cellIdx).getNumericCellValue();
+    protected Double getNumericValue(int cellIdx, Row row) {
+        return Optional.ofNullable(row.getCell(cellIdx)).map(Cell::getNumericCellValue).orElse(null);
+    }
+
+    protected Date getDateValue(int cellIdx, Row row) {
+        return Optional.ofNullable(row.getCell(cellIdx)).map(Cell::getDateCellValue).orElse(null);
     }
 
     public List<T> importToList() throws IOException {

@@ -24,6 +24,10 @@ import area, {
 import customer, {
   CustomerState
 } from 'app/entities/customer/customer.reducer';
+// prettier-ignore
+import pipe, {
+  PipeState
+} from 'app/entities/pipe/pipe.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -40,6 +44,7 @@ export interface IRootState {
   readonly region: RegionState;
   readonly area: AreaState;
   readonly customer: CustomerState;
+  readonly pipe: PipeState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -58,6 +63,7 @@ const rootReducer = combineReducers<IRootState>({
   region,
   area,
   customer,
+  pipe,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });

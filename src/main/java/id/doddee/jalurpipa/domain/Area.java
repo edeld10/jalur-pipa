@@ -38,6 +38,10 @@ public class Area implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     private Set<Customer> customers = new HashSet<>();
 
+    @OneToMany(mappedBy = "area")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    private Set<Pipe> pipes = new HashSet<>();
+
     @ManyToOne(optional = false)
     @NotNull
     @JsonIgnoreProperties(value = "areas", allowSetters = true)
@@ -114,6 +118,31 @@ public class Area implements Serializable {
 
     public void setCustomers(Set<Customer> customers) {
         this.customers = customers;
+    }
+
+    public Set<Pipe> getPipes() {
+        return pipes;
+    }
+
+    public Area pipes(Set<Pipe> pipes) {
+        this.pipes = pipes;
+        return this;
+    }
+
+    public Area addPipe(Pipe pipe) {
+        this.pipes.add(pipe);
+        pipe.setArea(this);
+        return this;
+    }
+
+    public Area removePipe(Pipe pipe) {
+        this.pipes.remove(pipe);
+        pipe.setArea(null);
+        return this;
+    }
+
+    public void setPipes(Set<Pipe> pipes) {
+        this.pipes = pipes;
     }
 
     public Region getRegion() {

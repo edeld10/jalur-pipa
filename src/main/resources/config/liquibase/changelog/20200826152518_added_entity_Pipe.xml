@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity Pipe.
+    -->
+    <changeSet id="20200826152518-1" author="jhipster">
+        <createTable tableName="pipe">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="object_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="y_start_coordinate" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="x_start_coordinate" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="y_end_coordinate" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="x_end_coordinate" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="tag_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pipe_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="diameter" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="diameter_un" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="material" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="operation_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="construction_year" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="p_1_length" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="actual_length" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="comparison_standard" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lok_class" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="pipe_material" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pen_tools" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="row" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="maop_dp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="max_temperature" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="plo_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="coi_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ra_pipe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="inspection" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="expired" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="modified" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="plo_document" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="plo_report" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="coi_document" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ra_document" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="file" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="file_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="area_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200826152518-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200826152518-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/pipe.csv"
+                  separator=";"
+                  tableName="pipe">
+            <column name="id" type="numeric"/>
+            <column name="object_id" type="numeric"/>
+            <column name="y_start_coordinate" type="numeric"/>
+            <column name="x_start_coordinate" type="numeric"/>
+            <column name="y_end_coordinate" type="numeric"/>
+            <column name="x_end_coordinate" type="numeric"/>
+            <column name="tag_id" type="string"/>
+            <column name="pipe_name" type="string"/>
+            <column name="description" type="string"/>
+            <column name="diameter" type="numeric"/>
+            <column name="diameter_un" type="string"/>
+            <column name="material" type="string"/>
+            <column name="operation_type" type="string"/>
+            <column name="construction_year" type="numeric"/>
+            <column name="p_1_length" type="numeric"/>
+            <column name="actual_length" type="numeric"/>
+            <column name="comparison_standard" type="string"/>
+            <column name="lok_class" type="numeric"/>
+            <column name="pipe_material" type="string"/>
+            <column name="pen_tools" type="string"/>
+            <column name="row" type="string"/>
+            <column name="maop_dp" type="string"/>
+            <column name="max_temperature" type="string"/>
+            <column name="plo_number" type="string"/>
+            <column name="coi_number" type="string"/>
+            <column name="ra_pipe" type="string"/>
+            <column name="inspection" type="date"/>
+            <column name="expired" type="date"/>
+            <column name="modified" type="date"/>
+            <column name="plo_document" type="string"/>
+            <column name="plo_report" type="string"/>
+            <column name="coi_document" type="string"/>
+            <column name="ra_document" type="string"/>
+            <column name="file" type="blob"/>
+            <column name="file_content_type" type="string"/>
+            <column name="area_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -46,9 +46,46 @@ entity Customer {
     file Blob required
 }
 
+entity Pipe {
+    objectId Long
+    yStartCoordinate Double
+    xStartCoordinate Double
+    yEndCoordinate Double
+    xEndCoordinate Double
+    tagId String
+    pipeName String
+    description String
+    diameter Integer
+    diameterUn String
+    material String
+    operationType String
+    constructionYear Integer
+    p1Length Integer
+    actualLength Integer
+    comparisonStandard String
+    lokClass Integer
+    pipeMaterial String
+    penTools String
+    row String
+    maopDp String
+    maxTemperature String
+    ploNumber String
+    coiNumber String
+    raPipe String
+    inspection LocalDate
+    expired LocalDate
+    modified LocalDate
+    ploDocument String
+    ploReport String
+    coiDocument String
+    raDocument String
+    file Blob required
+}
+
 relationship OneToMany {
 	Region to Area{region(name) required}
 	Area to Customer{area(name) required}
+	Area to Pipe{area(name) required}
 }
 
 dto all with mapstruct

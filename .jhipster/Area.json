@@ -24,6 +24,12 @@
       "relationshipName": "customer"
     },
     {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pipe",
+      "otherEntityRelationshipName": "area",
+      "relationshipName": "pipe"
+    },
+    {
       "relationshipType": "many-to-one",
       "otherEntityName": "region",
       "otherEntityRelationshipName": "area",

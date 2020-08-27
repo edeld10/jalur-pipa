@@ -1,0 +1,160 @@
+{
+  "name": "Pipe",
+  "fields": [
+    {
+      "fieldName": "objectId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "yStartCoordinate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "xStartCoordinate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "yEndCoordinate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "xEndCoordinate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "tagId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pipeName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diameter",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "diameterUn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "material",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "operationType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "constructionYear",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "p1Length",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "actualLength",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comparisonStandard",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lokClass",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "pipeMaterial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "penTools",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "row",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maopDp",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maxTemperature",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ploNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coiNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "raPipe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inspection",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "expired",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "modified",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "ploDocument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ploReport",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "coiDocument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "raDocument",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "file",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "area",
+      "otherEntityRelationshipName": "pipe",
+      "relationshipValidateRules": "required",
+      "relationshipName": "area",
+      "otherEntityField": "name"
+    }
+  ],
+  "changelogDate": "20200826152518",
+  "entityTableName": "pipe",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -15,6 +15,8 @@ public interface AreaMapper extends EntityMapper<AreaDTO, Area> {
 
     @Mapping(target = "customers", ignore = true)
     @Mapping(target = "removeCustomer", ignore = true)
+    @Mapping(target = "pipes", ignore = true)
+    @Mapping(target = "removePipe", ignore = true)
     @Mapping(source = "regionId", target = "region")
     Area toEntity(AreaDTO areaDTO);
 

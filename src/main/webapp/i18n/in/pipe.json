@@ -1,0 +1,55 @@
+{
+  "jalurpipaApp": {
+    "pipe": {
+      "home": {
+        "title": "Pipes",
+        "createLabel": "Buat Pipe baru",
+        "createOrEditLabel": "Buat atau edit Pipe",
+        "notFound": "No Pipes found"
+      },
+      "created": "Pipe dengan id {{ param }} telah dibuat",
+      "updated": "Pipe dengan id {{ param }} telah diperbaharui",
+      "deleted": "Pipe dengan id {{ param }} telah dihapus",
+      "delete": {
+        "question": "Apakah anda yakin ingin menghapus Pipe {{ id }}?"
+      },
+      "detail": {
+        "title": "Pipe"
+      },
+      "objectId": "Object Id",
+      "yStartCoordinate": "Y Start Coordinate",
+      "xStartCoordinate": "X Start Coordinate",
+      "yEndCoordinate": "Y End Coordinate",
+      "xEndCoordinate": "X End Coordinate",
+      "tagId": "Tag Id",
+      "pipeName": "Pipe Name",
+      "description": "Description",
+      "diameter": "Diameter",
+      "diameterUn": "Diameter Un",
+      "material": "Material",
+      "operationType": "Operation Type",
+      "constructionYear": "Construction Year",
+      "p1Length": "P 1 Length",
+      "actualLength": "Actual Length",
+      "comparisonStandard": "Comparison Standard",
+      "lokClass": "Lok Class",
+      "pipeMaterial": "Pipe Material",
+      "penTools": "Pen Tools",
+      "row": "Row",
+      "maopDp": "Maop Dp",
+      "maxTemperature": "Max Temperature",
+      "ploNumber": "Plo Number",
+      "coiNumber": "Coi Number",
+      "raPipe": "Ra Pipe",
+      "inspection": "Inspection",
+      "expired": "Expired",
+      "modified": "Modified",
+      "ploDocument": "Plo Document",
+      "ploReport": "Plo Report",
+      "coiDocument": "Coi Document",
+      "raDocument": "Ra Document",
+      "file": "File",
+      "area": "Area"
+    }
+  }
+}

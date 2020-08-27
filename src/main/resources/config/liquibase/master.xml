@@ -17,6 +17,7 @@
     <include file="config/liquibase/changelog/20200821222335_added_entity_Region.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200821222435_added_entity_Area.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200821222535_added_entity_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200826152518_added_entity_Pipe.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200821222435_added_entity_constraints_Area.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200821222535_added_entity_constraints_Customer.xml" relativeToChangelogFile="false"/>
@@ -24,6 +25,7 @@
     <include file="config/liquibase/changelog/20200823141701_drop_not_null_constraint_entity_Customer.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200823180312_drop_unique_constraint_entity_Customer.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200826090552_add_unique_constraint_entity_Customer.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200826152518_added_entity_constraints_Pipe.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

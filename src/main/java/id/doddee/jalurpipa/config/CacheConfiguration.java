@@ -85,6 +85,8 @@ public class CacheConfiguration {
             createCache(cm, id.doddee.jalurpipa.domain.Area.class.getName(), jcacheConfiguration);
             createCache(cm, id.doddee.jalurpipa.domain.Customer.class.getName(), jcacheConfiguration);
             createCache(cm, id.doddee.jalurpipa.domain.Area.class.getName() + ".customers", jcacheConfiguration);
+            createCache(cm, id.doddee.jalurpipa.domain.Area.class.getName() + ".pipes", jcacheConfiguration);
+            createCache(cm, id.doddee.jalurpipa.domain.Pipe.class.getName(), jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }
