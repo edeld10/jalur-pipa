@@ -334,6 +334,7 @@ export const CustomerUpdate = (props: ICustomerUpdateProps) => {
                   <Translate contentKey="jalurpipaApp.customer.area">Area</Translate>
                 </Label>
                 <AvInput id="customer-area" type="select" className="form-control" name="areaId" required>
+                  <option value="" key="0" />
                   {areas
                     ? areas.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>

@@ -334,6 +334,7 @@ export const PipeUpdate = (props: IPipeUpdateProps) => {
                   <Translate contentKey="jalurpipaApp.pipe.area">Area</Translate>
                 </Label>
                 <AvInput id="pipe-area" type="select" className="form-control" name="areaId" required>
+                  <option value="" key="0" />
                   {areas
                     ? areas.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
