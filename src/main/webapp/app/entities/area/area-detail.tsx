@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 import { getEntity } from './area.reducer';
 import { IArea } from 'app/shared/model/area.model';
-import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
+import {APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT, AUTHORITIES} from 'app/config/constants';
+import {hasAnyAuthority} from "app/shared/auth/private-route";
 
 export interface IAreaDetailProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
@@ -17,7 +18,7 @@ export const AreaDetail = (props: IAreaDetailProps) => {
     props.getEntity(props.match.params.id);
   }, []);
 
-  const { areaEntity } = props;
+  const { areaEntity, isAdmin } = props;
   return (
     <Row>
       <Col md="8">
@@ -55,19 +56,23 @@ export const AreaDetail = (props: IAreaDetailProps) => {
           </span>
         </Button>
         &nbsp;
-        <Button tag={Link} to={`/area/${areaEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" />{' '}
-          <span className="d-none d-md-inline">
+        {
+          isAdmin &&
+          <Button tag={Link} to={`/area/${areaEntity.id}/edit`} replace color="primary">
+            <FontAwesomeIcon icon="pencil-alt" />{' '}
+            <span className="d-none d-md-inline">
             <Translate contentKey="entity.action.edit">Edit</Translate>
           </span>
-        </Button>
+          </Button>
+        }
       </Col>
     </Row>
   );
 };
 
-const mapStateToProps = ({ area }: IRootState) => ({
+const mapStateToProps = ({ area, authentication }: IRootState) => ({
   areaEntity: area.entity,
+  isAdmin: hasAnyAuthority(authentication.account.authorities, [AUTHORITIES.ADMIN]),
 });
 
 const mapDispatchToProps = { getEntity };

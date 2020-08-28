@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 import { getEntities } from './region.reducer';
 import { IRegion } from 'app/shared/model/region.model';
-import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
+import {APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT, AUTHORITIES} from 'app/config/constants';
 import { ITEMS_PER_PAGE } from 'app/shared/util/pagination.constants';
 import { overridePaginationStateWithQueryParams } from 'app/shared/util/entity-utils';
+import {hasAnyAuthority} from "app/shared/auth/private-route";
 
 export interface IRegionProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
 
@@ -64,16 +65,19 @@ export const Region = (props: IRegionProps) => {
       activePage: currentPage,
     });
 
-  const { regionList, match, loading, totalItems } = props;
+  const { regionList, match, loading, totalItems, isAdmin } = props;
   return (
     <div>
       <h2 id="region-heading">
         <Translate contentKey="jalurpipaApp.region.home.title">Regions</Translate>
-        <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
-          <FontAwesomeIcon icon="plus" />
-          &nbsp;
-          <Translate contentKey="jalurpipaApp.region.home.createLabel">Create new Region</Translate>
-        </Link>
+        {
+          isAdmin &&
+          <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
+            <FontAwesomeIcon icon="plus" />
+            &nbsp;
+            <Translate contentKey="jalurpipaApp.region.home.createLabel">Create new Region</Translate>
+          </Link>
+        }
       </h2>
       <div className="table-responsive">
         {regionList && regionList.length > 0 ? (
@@ -114,28 +118,34 @@ export const Region = (props: IRegionProps) => {
                           <Translate contentKey="entity.action.view">View</Translate>
                         </span>
                       </Button>
-                      <Button
-                        tag={Link}
-                        to={`${match.url}/${region.id}/edit?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
-                        color="primary"
-                        size="sm"
-                      >
-                        <FontAwesomeIcon icon="pencil-alt" />{' '}
-                        <span className="d-none d-md-inline">
+                      {
+                        isAdmin &&
+                        <Button
+                          tag={Link}
+                          to={`${match.url}/${region.id}/edit?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
+                          color="primary"
+                          size="sm"
+                        >
+                          <FontAwesomeIcon icon="pencil-alt" />{' '}
+                          <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.edit">Edit</Translate>
                         </span>
-                      </Button>
-                      <Button
-                        tag={Link}
-                        to={`${match.url}/${region.id}/delete?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
-                        color="danger"
-                        size="sm"
-                      >
-                        <FontAwesomeIcon icon="trash" />{' '}
-                        <span className="d-none d-md-inline">
+                        </Button>
+                      }
+                      {
+                        isAdmin &&
+                        <Button
+                          tag={Link}
+                          to={`${match.url}/${region.id}/delete?page=${paginationState.activePage}&sort=${paginationState.sort},${paginationState.order}`}
+                          color="danger"
+                          size="sm"
+                        >
+                          <FontAwesomeIcon icon="trash" />{' '}
+                          <span className="d-none d-md-inline">
                           <Translate contentKey="entity.action.delete">Delete</Translate>
                         </span>
-                      </Button>
+                        </Button>
+                      }
                     </div>
                   </td>
                 </tr>
@@ -172,10 +182,11 @@ export const Region = (props: IRegionProps) => {
   );
 };
 
-const mapStateToProps = ({ region }: IRootState) => ({
+const mapStateToProps = ({ region, authentication }: IRootState) => ({
   regionList: region.entities,
   loading: region.loading,
   totalItems: region.totalItems,
+  isAdmin: hasAnyAuthority(authentication.account.authorities, [AUTHORITIES.ADMIN]),
 });
 
 const mapDispatchToProps = {

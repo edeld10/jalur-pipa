@@ -7,16 +7,18 @@ import Region from './region';
 import RegionDetail from './region-detail';
 import RegionUpdate from './region-update';
 import RegionDeleteDialog from './region-delete-dialog';
+import PrivateRoute from "app/shared/auth/private-route";
+import {AUTHORITIES} from "app/config/constants";
 
 const Routes = ({ match }) => (
   <>
     <Switch>
-      <ErrorBoundaryRoute exact path={`${match.url}/new`} component={RegionUpdate} />
-      <ErrorBoundaryRoute exact path={`${match.url}/:id/edit`} component={RegionUpdate} />
+      <PrivateRoute exact path={`${match.url}/new`} component={RegionUpdate} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
+      <PrivateRoute exact path={`${match.url}/:id/edit`} component={RegionUpdate} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
       <ErrorBoundaryRoute exact path={`${match.url}/:id`} component={RegionDetail} />
       <ErrorBoundaryRoute path={match.url} component={Region} />
     </Switch>
-    <ErrorBoundaryRoute exact path={`${match.url}/:id/delete`} component={RegionDeleteDialog} />
+    <PrivateRoute exact path={`${match.url}/:id/delete`} component={RegionDeleteDialog} hasAnyAuthorities={[AUTHORITIES.ADMIN]} />
   </>
 );
 
