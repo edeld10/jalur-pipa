@@ -221,25 +221,25 @@ export const CustomerDetail = (props: ICustomerDetailProps) => {
             </span>
           </dt>
           <dd>{customerEntity.reEngRla}</dd>
-          <dt>
-            <span id="file">
-              <Translate contentKey="jalurpipaApp.customer.file">File</Translate>
-            </span>
-          </dt>
-          <dd>
-            {customerEntity.file ? (
-              <div>
-                {customerEntity.fileContentType ? (
-                  <a onClick={openFile(customerEntity.fileContentType, customerEntity.file)}>
-                    <Translate contentKey="entity.action.open">Open</Translate>&nbsp;
-                  </a>
-                ) : null}
-                <span>
-                  {customerEntity.fileContentType}, {byteSize(customerEntity.file)}
-                </span>
-              </div>
-            ) : null}
-          </dd>
+          {/*<dt>*/}
+            {/*<span id="file">*/}
+              {/*<Translate contentKey="jalurpipaApp.customer.file">File</Translate>*/}
+            {/*</span>*/}
+          {/*</dt>*/}
+          {/*<dd>*/}
+            {/*{customerEntity.file ? (*/}
+              {/*<div>*/}
+                {/*{customerEntity.fileContentType ? (*/}
+                  {/*<a onClick={openFile(customerEntity.fileContentType, customerEntity.file)}>*/}
+                    {/*<Translate contentKey="entity.action.open">Open</Translate>&nbsp;*/}
+                  {/*</a>*/}
+                {/*) : null}*/}
+                {/*<span>*/}
+                  {/*{customerEntity.fileContentType}, {byteSize(customerEntity.file)}*/}
+                {/*</span>*/}
+              {/*</div>*/}
+            {/*) : null}*/}
+          {/*</dd>*/}
           <dt>
             <Translate contentKey="jalurpipaApp.customer.area">Area</Translate>
           </dt>

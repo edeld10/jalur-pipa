@@ -217,25 +217,25 @@ export const PipeDetail = (props: IPipeDetailProps) => {
             </span>
           </dt>
           <dd>{pipeEntity.raDocument}</dd>
-          <dt>
-            <span id="file">
-              <Translate contentKey="jalurpipaApp.pipe.file">File</Translate>
-            </span>
-          </dt>
-          <dd>
-            {pipeEntity.file ? (
-              <div>
-                {pipeEntity.fileContentType ? (
-                  <a onClick={openFile(pipeEntity.fileContentType, pipeEntity.file)}>
-                    <Translate contentKey="entity.action.open">Open</Translate>&nbsp;
-                  </a>
-                ) : null}
-                <span>
-                  {pipeEntity.fileContentType}, {byteSize(pipeEntity.file)}
-                </span>
-              </div>
-            ) : null}
-          </dd>
+          {/*<dt>*/}
+            {/*<span id="file">*/}
+              {/*<Translate contentKey="jalurpipaApp.pipe.file">File</Translate>*/}
+            {/*</span>*/}
+          {/*</dt>*/}
+          {/*<dd>*/}
+            {/*{pipeEntity.file ? (*/}
+              {/*<div>*/}
+                {/*{pipeEntity.fileContentType ? (*/}
+                  {/*<a onClick={openFile(pipeEntity.fileContentType, pipeEntity.file)}>*/}
+                    {/*<Translate contentKey="entity.action.open">Open</Translate>&nbsp;*/}
+                  {/*</a>*/}
+                {/*) : null}*/}
+                {/*<span>*/}
+                  {/*{pipeEntity.fileContentType}, {byteSize(pipeEntity.file)}*/}
+                {/*</span>*/}
+              {/*</div>*/}
+            {/*) : null}*/}
+          {/*</dd>*/}
           <dt>
             <Translate contentKey="jalurpipaApp.pipe.area">Area</Translate>
           </dt>
