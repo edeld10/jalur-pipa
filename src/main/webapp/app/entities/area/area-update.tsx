@@ -117,6 +117,7 @@ export const AreaUpdate = (props: IAreaUpdateProps) => {
                   <Translate contentKey="jalurpipaApp.area.region">Region</Translate>
                 </Label>
                 <AvInput id="area-region" type="select" className="form-control" name="regionId" required>
+                  <option value="" key="0" />
                   {regions
                     ? regions.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
