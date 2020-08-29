@@ -20,7 +20,6 @@ import org.springframework.boot.info.BuildProperties;
 import org.springframework.boot.info.GitProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
-import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -57,7 +56,9 @@ public class CacheConfiguration {
                 .setAddress(jHipsterProperties.getCache().getRedis().getServer()[0]);
 
             if (redisUri.getUserInfo() != null) {
-                singleServerConfig.setPassword(redisUri.getUserInfo().substring(redisUri.getUserInfo().indexOf(':') + 1));
+                int index = redisUri.getUserInfo().indexOf(':');
+                singleServerConfig.setUsername(redisUri.getUserInfo().substring(0, index));
+                singleServerConfig.setPassword(redisUri.getUserInfo().substring(index + 1));
             }
         }
         jcacheConfig.setStatisticsEnabled(true);
