@@ -13,8 +13,6 @@ import org.redisson.config.ClusterServersConfig;
 import org.redisson.config.Config;
 import org.redisson.config.SingleServerConfig;
 import org.redisson.jcache.configuration.RedissonConfiguration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.cache.JCacheManagerCustomizer;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernatePropertiesCustomizer;
@@ -28,8 +26,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableCaching
 public class CacheConfiguration {
-    private final Logger log = LoggerFactory.getLogger(CacheConfiguration.class);
-
     private GitProperties gitProperties;
     private BuildProperties buildProperties;
 
@@ -69,12 +65,6 @@ public class CacheConfiguration {
         jcacheConfig.setStatisticsEnabled(true);
         jcacheConfig.setExpiryPolicyFactory(
             CreatedExpiryPolicy.factoryOf(new Duration(TimeUnit.SECONDS, jHipsterProperties.getCache().getRedis().getExpiration()))
-        );
-        log.debug(
-            "config -> {}, {}, {}",
-            config.useSingleServer().getAddress(),
-            config.useSingleServer().getUsername(),
-            config.useSingleServer().getPassword()
         );
         return RedissonConfiguration.fromInstance(Redisson.create(config), jcacheConfig);
     }
