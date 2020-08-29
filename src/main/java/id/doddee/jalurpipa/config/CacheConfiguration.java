@@ -58,7 +58,6 @@ public class CacheConfiguration {
 
             if (redisUri.getUserInfo() != null) {
                 int index = redisUri.getUserInfo().indexOf(':');
-                singleServerConfig.setUsername(redisUri.getUserInfo().substring(0, index));
                 singleServerConfig.setPassword(redisUri.getUserInfo().substring(index + 1));
             }
         }
