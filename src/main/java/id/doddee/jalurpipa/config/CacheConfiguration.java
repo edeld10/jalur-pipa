@@ -48,12 +48,13 @@ public class CacheConfiguration {
                 clusterServersConfig.setPassword(redisUri.getUserInfo().substring(redisUri.getUserInfo().indexOf(':') + 1));
             }
         } else {
+            String address = String.format("%s://%s:%d", redisUri.getScheme(), redisUri.getHost(), redisUri.getPort());
             SingleServerConfig singleServerConfig = config
                 .useSingleServer()
                 .setConnectionPoolSize(jHipsterProperties.getCache().getRedis().getConnectionPoolSize())
                 .setConnectionMinimumIdleSize(jHipsterProperties.getCache().getRedis().getConnectionMinimumIdleSize())
                 .setSubscriptionConnectionPoolSize(jHipsterProperties.getCache().getRedis().getSubscriptionConnectionPoolSize())
-                .setAddress(jHipsterProperties.getCache().getRedis().getServer()[0]);
+                .setAddress(address);
 
             if (redisUri.getUserInfo() != null) {
                 int index = redisUri.getUserInfo().indexOf(':');
