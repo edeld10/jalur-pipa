@@ -79,10 +79,9 @@ jhipster:
       cluster: false
       # server: redis://localhost:6379,redis://localhost:16379,redis://localhost:26379
       # cluster: true
-      connectionPoolSize: 64
-      connectionMinimumIdleSize: 24
-      subscriptionConnectionPoolSize: 50
-      subscriptionConnectionMinimumIdleSize: 1
+      connectionPoolSize: 32
+      connectionMinimumIdleSize: 12
+      subscriptionConnectionPoolSize: 25
   # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
   cors:
     allowed-origins: '*'

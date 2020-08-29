@@ -54,9 +54,6 @@ public class CacheConfiguration {
                 .setConnectionPoolSize(jHipsterProperties.getCache().getRedis().getConnectionPoolSize())
                 .setConnectionMinimumIdleSize(jHipsterProperties.getCache().getRedis().getConnectionMinimumIdleSize())
                 .setSubscriptionConnectionPoolSize(jHipsterProperties.getCache().getRedis().getSubscriptionConnectionPoolSize())
-                .setSubscriptionConnectionMinimumIdleSize(
-                    jHipsterProperties.getCache().getRedis().getSubscriptionConnectionMinimumIdleSize()
-                )
                 .setAddress(address);
 
             if (redisUri.getUserInfo() != null) {
